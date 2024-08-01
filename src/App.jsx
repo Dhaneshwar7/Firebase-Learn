@@ -113,7 +113,7 @@ function App() {
 			</div>
 			<div>
 				<input type="file" onChange={e => setUploadFile(e.target.files[0])} />
-				<button onClick={handleUploadFile}>Upload</button>
+				<button className='bg-slate-600 text-white rounded px-3 py-1' onClick={handleUploadFile}>Upload</button>
 			</div>
 		</>
 	);
