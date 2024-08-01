@@ -10,6 +10,7 @@ const Auth = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	console.log(auth?.currentUser?.email);
+	console.log(auth?.currentUser?.uid);
 	// console.log(auth?.currentUser?.photoURL);
 
 	const handleSignIn = async () => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { db } from '../config/firebase';
+import { db, auth } from '../config/firebase';
 import { addDoc, collection } from 'firebase/firestore';
 
 const AddBook = ({ getMovieList }) => {
@@ -16,6 +16,7 @@ const AddBook = ({ getMovieList }) => {
 					publishDate: newPublishDate,
 					isNationalAwarded: checked,
 					createdDate: Date.now(),
+					userId: auth?.currentUser?.uid,
 				});
 			}
 			setNewPublishDate('');
