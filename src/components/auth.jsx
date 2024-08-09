@@ -31,7 +31,11 @@ const Auth = ({ setCurrentUser, fetchCurrentUser }) => {
 	const handleSignInwithGoogle = async () => {
 		try {
 			const { user } = await handleSignInWithGoogle();
-			setCurrentUser(user);
+			console.log(user);
+
+			setTimeout(() => {
+				setCurrentUser(user);
+			}, 1000);
 		} catch (error) {
 			console.log(error);
 		}
