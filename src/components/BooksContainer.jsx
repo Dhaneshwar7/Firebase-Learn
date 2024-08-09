@@ -14,10 +14,10 @@ const BookContainer = ({ books, getBooksData }) => {
 							Book Name
 						</th>
 						<th scope="col" className="px-6 py-3">
-							Awarded/Achivement
+							Awarded / Achivement
 						</th>
 						<th scope="col" className="px-6 py-3">
-							Datae
+							Date
 						</th>
 						<th scope="col" className="px-6 py-3">
 							Action
