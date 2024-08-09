@@ -52,7 +52,11 @@ function App() {
 			)}
 			<hr />
 			<br />
-			<BookContainer getBooksData={getBooksData} books={books} />
+			<BookContainer
+				currentUser={currentUser}
+				getBooksData={getBooksData}
+				books={books}
+			/>
 		</>
 	);
 }
