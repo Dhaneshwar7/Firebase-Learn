@@ -29,7 +29,6 @@ function App() {
 			setBooks(data);
 		}
 		console.log(data);
-		
 	};
 	useEffect(() => {
 		getBooksData();
@@ -46,7 +45,10 @@ function App() {
 					/>
 				</div>
 			) : (
-				<Auth setCurrentUser={setCurrentUser} />
+				<Auth
+					setCurrentUser={setCurrentUser}
+					fetchCurrentUser={fetchCurrentUser}
+				/>
 			)}
 			<hr />
 			<br />

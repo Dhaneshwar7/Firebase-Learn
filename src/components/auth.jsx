@@ -14,7 +14,7 @@ const initialFormField = {
 	email: '',
 	password: '',
 };
-const Auth = ({ setCurrentUser }) => {
+const Auth = ({ setCurrentUser, fetchCurrentUser }) => {
 	const [formValues, setFormValues] = useState(initialFormField);
 
 	const handleFormSubmit = async e => {
@@ -24,6 +24,14 @@ const Auth = ({ setCurrentUser }) => {
 			// console.log(user);
 			setCurrentUser(user);
 			setFormValues(initialFormField);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+	const handleSignInwithGoogle = async () => {
+		try {
+			const { user } = await handleSignInWithGoogle();
+			setCurrentUser(user);
 		} catch (error) {
 			console.log(error);
 		}
@@ -98,7 +106,7 @@ const Auth = ({ setCurrentUser }) => {
 					</form>
 					<div className="mt-1">
 						<button
-							onClick={() => handleSignInWithGoogle()}
+							onClick={handleSignInwithGoogle}
 							className="flex w-full items-center	 justify-center rounded-md bg-gray-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
 						>
 							<img src="/google.webp" height={30} width={30} alt="" />
