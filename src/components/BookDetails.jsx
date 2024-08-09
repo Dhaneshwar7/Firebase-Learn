@@ -9,7 +9,7 @@ const BookDetails = ({ book, currentUser, getBooksData }) => {
 	const [editedBookName, setEditedBookName] = useState(book?.title || '');
 
 	return (
-		<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+		<tr className=" border-b bg-slate-500 dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-600 dark:hover:bg-gray-600">
 			<td className="p-4">
 				<img
 					src="https://flowbite.com/docs/images/products/apple-watch.png"
@@ -29,9 +29,9 @@ const BookDetails = ({ book, currentUser, getBooksData }) => {
 					autoComplete="bookName"
 					onChange={e => setEditedBookName(e.target.value)}
 					readOnly={!isTodoEditable}
-					className={` outline-none bg-transparent block w-full px-5  text-white rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${
+					className={`outline-none bg-transparent block w-full px-5  text-black rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-transparent dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${
 						isTodoEditable
-							? 'border-white/10 px-2'
+							? 'border-white/10 px-2 ring-gray-50'
 							: 'border-none ring-0 focus:ring-transparent'
 					} `}
 				/>
@@ -58,7 +58,7 @@ const BookDetails = ({ book, currentUser, getBooksData }) => {
 								getBooksData();
 							}, 1000);
 						}}
-						className="font-medium bg-red-600 px-2 py-2 rounded-md dark:bg-red-500 hover:underline"
+						className="font-medium text-black dark:text-white bg-red-600 px-2 py-2 rounded-md dark:bg-red-500 hover:underline"
 					>
 						Delete
 					</button>
@@ -72,7 +72,7 @@ const BookDetails = ({ book, currentUser, getBooksData }) => {
 								setIsTodoEditable(false);
 							} else setIsTodoEditable(prev => !prev);
 						}}
-						className="font-medium bg-blue-400 ml-2  px-4 py-2 text-black rounded-md dark:bg-blue-400  hover:underline"
+						className="font-medium bg-blue-400 ml-2  px-4 py-2 text-black dark:text-white rounded-md dark:bg-blue-400  hover:underline"
 					>
 						{isTodoEditable ? <span>Update 📁 </span> : <span>Edit ✏️</span>}
 					</button>
